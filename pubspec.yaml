@@ -10,6 +10,12 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # Used for state management
+  flutter_riverpod: ^2.3.6
+
+  # Used for log
+  logger: ^1.3.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -28,6 +34,10 @@ dev_dependencies:
 
   # Used for json serialization
   json_serializable: ^6.6.1
+
+  # Analyzer
+  dart_code_metrics: ^5.7.2
+  dart_code_metrics_presets: ^1.6.0
 
 
 flutter:
