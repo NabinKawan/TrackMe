@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:track_me/configs/constants.dart';
+import 'package:track_me/configs/app_layout.dart';
 import 'package:track_me/configs/theme.dart';
 import 'package:track_me/routes.dart';
 
@@ -18,13 +18,13 @@ class App extends StatelessWidget {
         final data = MediaQuery.of(context);
         final smallestSize = min(data.size.width, data.size.height);
         final textScaleFactor =
-            min(smallestSize / AppConstants.designScreenSize.width, 1.0);
+            min(smallestSize / AppLayout.designScreenSize.width, 1.0);
         return MediaQuery(
           data: data.copyWith(textScaleFactor: textScaleFactor),
           child: child,
         );
       },
-      theme: AppTheme().themeData,
+      theme: AppTheme.lightTheme,
       debugShowCheckedModeBanner: false,
     );
   }

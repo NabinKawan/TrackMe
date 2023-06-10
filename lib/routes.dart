@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:track_me/core/fade_page_router.dart';
-import 'package:track_me/ui/screens/home/home_screen.dart';
+import 'package:track_me/ui/screens/home/home.dart';
 
 enum Routes { home }
 

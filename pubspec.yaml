@@ -35,13 +35,12 @@ dev_dependencies:
   # Used for json serialization
   json_serializable: ^6.6.1
 
-  # Analyzer
-  dart_code_metrics: ^5.7.2
-  dart_code_metrics_presets: ^1.6.0
-
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/images/
 
   fonts:
     - family: CircularStd
