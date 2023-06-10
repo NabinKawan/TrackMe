@@ -16,7 +16,9 @@ class _Paths {
 }
 
 class AppNavigator {
-  static GlobalKey<NavigatorState> navigatorKey = GlobalKey();
+  static final GlobalKey<NavigatorState> navigatorKey = GlobalKey();
+
+  static NavigatorState? get state => navigatorKey.currentState;
 
   static Route onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -33,6 +35,4 @@ class AppNavigator {
       state?.pushReplacementNamed(_Paths.of(route), arguments: arguments);
 
   static void pop() => state?.pop();
-
-  static NavigatorState? get state => navigatorKey.currentState;
 }
