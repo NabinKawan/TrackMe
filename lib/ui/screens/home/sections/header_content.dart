@@ -1,6 +1,6 @@
 part of '../home.dart';
 
-class _HeaderCardContent extends StatelessWidget {
+class _HeaderContent extends StatelessWidget {
   static const double height = 500;
 
   @override

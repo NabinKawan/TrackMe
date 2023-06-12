@@ -4,7 +4,7 @@ import 'package:track_me/ui/screens/home/widgets/category_grid.dart';
 import 'package:track_me/ui/widgets/pokeball_background.dart';
 import 'package:track_me/ui/widgets/search_bar.dart';
 
-part 'sections/header_card_content.dart';
+part 'sections/header_content.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -36,13 +36,13 @@ class _HomeScreenState extends State<HomeScreen> {
     if (!_scrollController.hasClients) return;
 
     final offset = _scrollController.offset;
-    final showTitle = offset > _HeaderCardContent.height - kToolbarHeight;
+    final showTitle = offset > _HeaderContent.height - kToolbarHeight;
 
     // Prevent unneccesary rebuild
     if (this.showTitle == showTitle) return;
 
     setState(() {
-      this.showTitle = !showTitle;
+      this.showTitle = showTitle;
     });
   }
 
@@ -50,9 +50,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: NestedScrollView(
+        controller: _scrollController,
         headerSliverBuilder: (_, __) => [
           SliverAppBar(
-            expandedHeight: _HeaderCardContent.height,
+            expandedHeight: _HeaderContent.height,
             floating: true,
             pinned: true,
             elevation: 0,
@@ -75,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ?.copyWith(fontWeight: FontWeight.bold),
                 ),
               ),
-              background: _HeaderCardContent(),
+              background: _HeaderContent(),
             ),
           ),
         ],
