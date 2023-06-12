@@ -1,24 +1,14 @@
 part of '../home.dart';
 
 class _HeaderCardContent extends StatelessWidget {
-  static const double height = 582;
-
-  void _onSelectCategory(Category category) {
-    AppNavigator.push(category.route);
-  }
+  static const double height = 500;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       clipBehavior: Clip.hardEdge,
       decoration: const BoxDecoration(
-        // color: Colors.white,
         borderRadius: BorderRadius.vertical(bottom: Radius.circular(10)),
-        // border: Border(
-        //   bottom: BorderSide(
-        //     color: Colors.white,
-        //   ),
-        // ),
       ),
       child: PokeballBackground(
         child: Column(
@@ -26,51 +16,26 @@ class _HeaderCardContent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            _buildTitle(),
+            Expanded(
+              child: Container(
+                constraints: const BoxConstraints.expand(),
+                padding: const EdgeInsets.all(28),
+                alignment: Alignment.bottomLeft,
+                child: const Text(
+                  'Hi Nabin \nHow are you?',
+                  style: TextStyle(
+                    fontSize: 30,
+                    height: 1.6,
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
+              ),
+            ),
             const SearchBar(),
-            _buildCategories(context),
+            const CategoryGrid(),
           ],
         ),
       ),
-    );
-  }
-
-  Widget _buildTitle() {
-    return Expanded(
-      child: Container(
-        constraints: const BoxConstraints.expand(),
-        padding: const EdgeInsets.all(28),
-        alignment: Alignment.bottomLeft,
-        child: const Text(
-          'What Pokemon\nare you looking for?',
-          style: TextStyle(
-            fontSize: 30,
-            height: 1.6,
-            fontWeight: FontWeight.w900,
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildCategories(BuildContext context) {
-    return GridView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      padding: const EdgeInsets.fromLTRB(28, 42, 28, 62),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 10,
-        childAspectRatio: 2.6,
-        mainAxisSpacing: 15,
-      ),
-      itemCount: categories.length,
-      itemBuilder: (context, index) {
-        return CategoryCard(
-          categories[index],
-          onPress: () => _onSelectCategory(categories[index]),
-        );
-      },
     );
   }
 }

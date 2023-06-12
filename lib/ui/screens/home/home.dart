@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:track_me/configs/colors.dart';
-import 'package:track_me/data/categories.dart';
-import 'package:track_me/domain/entities/category.dart';
-import 'package:track_me/routes.dart';
-import 'package:track_me/ui/screens/home/widgets/category_card.dart';
+import 'package:track_me/ui/screens/home/widgets/category_grid.dart';
 import 'package:track_me/ui/widgets/pokeball_background.dart';
 import 'package:track_me/ui/widgets/search_bar.dart';
 
@@ -45,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
     if (this.showTitle == showTitle) return;
 
     setState(() {
-      this.showTitle = showTitle;
+      this.showTitle = !showTitle;
     });
   }
 
