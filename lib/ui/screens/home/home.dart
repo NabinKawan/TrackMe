@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:track_me/configs/colors.dart';
+import 'package:track_me/styles/app_colors.dart';
+import 'package:track_me/styles/text_styles.dart';
 import 'package:track_me/ui/screens/home/widgets/category_grid.dart';
 import 'package:track_me/ui/widgets/pokeball_background.dart';
 import 'package:track_me/ui/widgets/search_bar.dart';
@@ -80,7 +81,14 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ],
-        body: const SizedBox(),
+        body: Column(
+          children: const [
+            Text(
+              'hi',
+              style: TextStyles.header1TextStyle,
+            )
+          ],
+        ),
       ),
     );
   }

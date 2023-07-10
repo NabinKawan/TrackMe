@@ -22,12 +22,8 @@ class _HeaderContent extends StatelessWidget {
                 padding: const EdgeInsets.all(28),
                 alignment: Alignment.bottomLeft,
                 child: const Text(
-                  'Hi Nabin \nHow are you?',
-                  style: TextStyle(
-                    fontSize: 30,
-                    height: 1.6,
-                    fontWeight: FontWeight.w900,
-                  ),
+                  'Hello coder! \nHow are you?',
+                  style: TextStyles.header1TextStyle,
                 ),
               ),
             ),

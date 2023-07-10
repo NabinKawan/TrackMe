@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:track_me/configs/colors.dart';
+import 'package:track_me/styles/app_colors.dart';
 import 'package:track_me/configs/fonts.dart';
 
 class AppTheme {

@@ -1,4 +1,4 @@
-import 'package:track_me/configs/colors.dart';
+import 'package:track_me/styles/app_colors.dart';
 import 'package:track_me/domain/entities/category.dart';
 import 'package:track_me/routes.dart';
 

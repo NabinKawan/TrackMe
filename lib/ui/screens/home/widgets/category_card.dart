@@ -37,8 +37,24 @@ class CategoryCard extends StatelessWidget {
                 splashColor: Colors.white10,
                 child: Stack(
                   children: [
-                    _buildPokeballDecoration(height: itemHeight),
-                    _buildCircleDecoration(height: itemHeight),
+                    Positioned(
+                      top: -itemHeight * 0.16,
+                      right: -itemHeight * 0.25,
+                      child: Image(
+                        image: AppImages.focus,
+                        width: itemHeight * 1.388,
+                        height: itemHeight * 1.388,
+                        color: Colors.white.withOpacity(0.14),
+                      ),
+                    ),
+                    Positioned(
+                      top: -itemHeight * 0.616,
+                      left: -itemHeight * 0.53,
+                      child: CircleAvatar(
+                        radius: (itemHeight * 1.03) / 2,
+                        backgroundColor: Colors.white.withOpacity(0.14),
+                      ),
+                    ),
                     _CardContent(category.name),
                   ],
                 ),
@@ -47,30 +63,6 @@ class CategoryCard extends StatelessWidget {
           ],
         );
       },
-    );
-  }
-
-  Widget _buildCircleDecoration({required double height}) {
-    return Positioned(
-      top: -height * 0.616,
-      left: -height * 0.53,
-      child: CircleAvatar(
-        radius: (height * 1.03) / 2,
-        backgroundColor: Colors.white.withOpacity(0.14),
-      ),
-    );
-  }
-
-  Widget _buildPokeballDecoration({required double height}) {
-    return Positioned(
-      top: -height * 0.16,
-      right: -height * 0.25,
-      child: Image(
-        image: AppImages.pokeball,
-        width: height * 1.388,
-        height: height * 1.388,
-        color: Colors.white.withOpacity(0.14),
-      ),
     );
   }
 }

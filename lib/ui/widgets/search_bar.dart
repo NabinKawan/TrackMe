@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:track_me/configs/colors.dart';
+import 'package:track_me/styles/app_colors.dart';
+import 'package:track_me/styles/text_styles.dart';
 import 'package:track_me/ui/widgets/spacer.dart';
 
 class SearchBar extends StatelessWidget {
@@ -31,11 +32,7 @@ class SearchBar extends StatelessWidget {
                 isDense: true,
                 hintText: 'Search Questions, Projects etc',
                 contentPadding: EdgeInsets.zero,
-                hintStyle: TextStyle(
-                  fontSize: 14,
-                  // color: AppColors.grey,
-                  height: 1,
-                ),
+                hintStyle:TextStyles.hintTextStyle,
                 border: InputBorder.none,
               ),
             ),
